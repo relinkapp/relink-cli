@@ -2,9 +2,6 @@
   "type":"object",
   "title":"extension",
   "additionalProperties":false,
-  "examples":[
-    
-  ],
   "description":"",
   "properties":{
     "name":{

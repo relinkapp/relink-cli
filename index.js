@@ -76,6 +76,7 @@ program.command('bundle')
 
     const buffer = deflateSync(JSON.stringify(extension));
     writeFileSync(`${output}.rex`, buffer);
+    console.log(success(`Successfully created and wrote extension to ${output}.rex`));
   });
 
 program.command('verify')

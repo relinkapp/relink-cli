@@ -1,77 +1,77 @@
 {
-  "type":"object",
-  "title":"extension",
-  "additionalProperties":false,
-  "description":"",
-  "properties":{
-    "name":{
-      "type":"string"
+  "type": "object",
+  "title": "extension",
+  "additionalProperties": false,
+  "description": "",
+  "properties": {
+    "name": {
+      "type": "string"
     },
-    "description":{
-      "type":"string"
+    "description": {
+      "type": "string"
     },
-    "author":{
-      "type":"string"
+    "author": {
+      "type": "string"
     },
-    "image":{
-      "type":"string"
+    "image": {
+      "type": "string"
     },
-    "identifier":{
-      "type":"string",
-      "pattern":"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    "identifier": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
     },
-    "fields":{
-      "type":"array",
-      "minItems":1,
-      "items":{
-        "type":"object",
-        "title":"field",
-        "description":"",
-        "additionalProperties":false,
-        "properties":{
-          "name":{
-            "type":"string",
-            "description":"The field name (visible to the user), must be unique across different fields for an extension"
+    "fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "title": "field",
+        "description": "",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The field name (visible to the user), must be unique across different fields for an extension"
           },
-          "allowsMultiple":{
-            "type":"boolean",
-            "description":"Lets the user create multiple of these fields and allows them to add descriptions beside each fields"
+          "allowsMultiple": {
+            "type": "boolean",
+            "description": "Lets the user create multiple of these fields and allows them to add descriptions beside each fields"
           },
-          "components":{
-            "type":"array",
-            "minItems":1,
-            "description":"Components the field is made up of",
-            "items":{
-              "oneOf":[
+          "components": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Components the field is made up of",
+            "items": {
+              "oneOf": [
                 {
-                  "type":"string"
+                  "type": "string"
                 },
                 {
-                  "type":"object",
-                  "additionalProperties":false,
-                  "properties":{
-                    "validation":{
-                      "type":"string",
-                      "enum":[
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "validation": {
+                      "type": "string",
+                      "enum": [
                         "type",
                         "regex"
                       ]
                     },
-                    "value":{
-                      "type":"string"
+                    "value": {
+                      "type": "string"
                     }
                   },
-                  "required":[
+                  "required": [
                     "validation",
                     "value"
                   ]
                 }
               ],
-              "description":"A component must be one of the following"
+              "description": "A component must be one of the following"
             }
           }
         },
-        "required":[
+        "required": [
           "name",
           "allowsMultiple",
           "components"
@@ -79,7 +79,7 @@
       }
     }
   },
-  "required":[
+  "required": [
     "name",
     "description",
     "author",

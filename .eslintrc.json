@@ -21,6 +21,7 @@
         "singleReturnOnly": false,
         "classPropertiesAllowed": false
       }
-    ]
+    ],
+    "no-console": "off"
   }
 }

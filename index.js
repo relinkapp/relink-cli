@@ -19,7 +19,7 @@ const schema = JSON.parse(readFileSync(join(__dirname, 'schema.json')));
 const program = new Command();
 
 program
-  .name(meta.name)
+  .name('relink')
   .description(meta.description)
   .version(meta.version);
 

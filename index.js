@@ -63,6 +63,13 @@ program.command('bundle')
 
       exit(1);
     }
+
+    const fields = extension.fields.map((field) => field.name);
+
+    if (fields.length !== (new Set(fields)).size) {
+      console.log(error(Error('Field names must be unique')));
+      exit(1);
+    }
   });
 
 program.parse(process.argv);

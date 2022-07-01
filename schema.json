@@ -13,9 +13,6 @@
     "author": {
       "type": "string"
     },
-    "image": {
-      "type": "string"
-    },
     "identifier": {
       "type": "string",
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
@@ -79,7 +76,6 @@
     "name",
     "description",
     "author",
-    "image",
     "identifier",
     "fields"
   ]

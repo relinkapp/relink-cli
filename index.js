@@ -56,7 +56,7 @@ program.command('bundle')
 
     const validation = validate(extension, schema).errors;
 
-    if (validation) {
+    if (validation.length) {
       validation.forEach((e) => {
         console.log(warning(Error(e.stack)));
       });

@@ -30,17 +30,14 @@
         "additionalProperties": false,
         "properties": {
           "name": {
-            "type": "string",
-            "description": "The field name (visible to the user), must be unique across different fields for an extension"
+            "type": "string"
           },
           "allowsMultiple": {
-            "type": "boolean",
-            "description": "Lets the user create multiple of these fields and allows them to add descriptions beside each fields"
+            "type": "boolean"
           },
           "components": {
             "type": "array",
             "minItems": 1,
-            "description": "Components the field is made up of",
             "items": {
               "oneOf": [
                 {
@@ -66,8 +63,7 @@
                     "value"
                   ]
                 }
-              ],
-              "description": "A component must be one of the following"
+              ]
             }
           }
         },

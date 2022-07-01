@@ -2,7 +2,8 @@
 
 const { Command } = require('commander');
 const { validate } = require('jsonschema');
-const { readFileSync } = require('fs');
+const { deflateSync } = require('zlib');
+const { readFileSync, writeFileSync } = require('fs');
 const { join } = require('path');
 const { lookup } = require('mime-types');
 const chalk = require('chalk');
@@ -24,7 +25,8 @@ program
 program.command('bundle')
   .description('Bundle a valid Relink extension for users')
   .argument('<file>', 'JSON file that is a valid Relink extension')
-  .action((file) => {
+  .argument('<output>', 'Output file name')
+  .action((file, output) => {
     let extension;
 
     try {
@@ -70,6 +72,9 @@ program.command('bundle')
       console.log(error(Error('Field names must be unique')));
       exit(1);
     }
+
+    const buffer = deflateSync(JSON.stringify(extension));
+    writeFileSync(`${output}.rex`, buffer);
   });
 
 program.parse(process.argv);
